@@ -6,8 +6,7 @@
  *
  * @package    WebsiteApp
  * @subpackage UB_Theme
- * @author     Controlled Chaos Design <greg@ccdzine.com>
- * @link       https://github.com/ControlledChaos/unbranded
+ * @link       https://github.com/antibrand/theme
  * @since      1.0.0
  */
 
