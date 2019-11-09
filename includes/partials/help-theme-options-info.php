@@ -2,12 +2,12 @@
 /**
  * Content for theme options page More Information help tab
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
-namespace UB_Theme\Includes\Options;
+namespace AB_Theme\Includes\Options;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

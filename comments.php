@@ -5,8 +5,8 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 

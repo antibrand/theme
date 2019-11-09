@@ -4,8 +4,8 @@
  *
  * Do not namespace this file.
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since  1.0.0
  * @access public
  */
-class UB_Theme_Deactivate {
+class AB_Theme_Deactivate {
 
     /**
 	 * Constructor magic method
@@ -52,4 +52,4 @@ class UB_Theme_Deactivate {
 }
 
 // Run the class.
-new UB_Theme_Deactivate;
+new AB_Theme_Deactivate;

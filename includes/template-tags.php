@@ -2,13 +2,13 @@
 /**
  * Template tags
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
 // Namespace specificity for theme functions & filters.
-namespace UB_Theme\Tags;
+namespace AB_Theme\Tags;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

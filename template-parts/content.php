@@ -2,8 +2,8 @@
 /**
  * Template part for displaying posts
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				UB_Theme\Tags\posted_on();
-				UB_Theme\Tags\posted_by();
+				AB_Theme\Tags\posted_on();
+				AB_Theme\Tags\posted_by();
 				?>
 			</div>
 		<?php endif; ?>
 	</header>
 
-	<?php UB_Theme\Tags\post_thumbnail(); ?>
+	<?php AB_Theme\Tags\post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php
@@ -53,6 +53,6 @@
 	</div>
 
 	<footer class="entry-footer">
-		<?php UB_Theme\Tags\entry_footer(); ?>
+		<?php AB_Theme\Tags\entry_footer(); ?>
 	</footer>
 </article>

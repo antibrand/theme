@@ -2,8 +2,8 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 

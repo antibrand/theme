@@ -2,8 +2,8 @@
 /**
  * Template part for displaying page content in page.php
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
@@ -21,7 +21,7 @@
 		} ?>
 	</header>
 
-	<?php UB_Theme\Tags\post_thumbnail(); ?>
+	<?php AB_Theme\Tags\post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php

@@ -4,14 +4,14 @@
  *
  * A basic starter theme for your website management system.
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @link       https://github.com/antibrand/theme
  * @since      1.0.0
  */
 
 // Namespace specificity for theme functions & filters.
-namespace UB_Theme\Functions;
+namespace AB_Theme\Functions;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

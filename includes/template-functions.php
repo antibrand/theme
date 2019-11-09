@@ -2,13 +2,13 @@
 /**
  * Template functions
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
 // Namespace specificity for theme functions & filters.
-namespace UB_Theme\Includes;
+namespace AB_Theme\Includes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,7 +40,7 @@ function body_classes( $classes ) {
 	return $classes;
 
 }
-add_filter( 'body_class', 'UB_Theme\Includes\body_classes' );
+add_filter( 'body_class', 'AB_Theme\Includes\body_classes' );
 
 /**
  * Pingback header
@@ -58,4 +58,4 @@ function pingback_header() {
 	}
 
 }
-add_action( 'wp_head', 'UB_Theme\Includes\pingback_header' );
+add_action( 'wp_head', 'AB_Theme\Includes\pingback_header' );

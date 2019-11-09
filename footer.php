@@ -2,8 +2,8 @@
 /**
  * The template for displaying the footer
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
@@ -28,7 +28,7 @@ $copyright = sprintf(
 	</footer>
 </div>
 
-<?php UB_Theme\Tags\after_page(); ?>
+<?php AB_Theme\Tags\after_page(); ?>
 <?php wp_footer(); ?>
 
 </body>

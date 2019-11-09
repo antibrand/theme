@@ -6,8 +6,8 @@
  * Template Post Type: post, page
  * Description: Does not load the primary sidebar.
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 

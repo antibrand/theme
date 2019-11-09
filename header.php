@@ -4,8 +4,8 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  *
  * @todo       Add hooks for nav above or below header.
@@ -46,8 +46,8 @@ if ( is_home() && ! is_front_page() ) {
 </head>
 
 <body <?php body_class(); ?>>
-<?php UB_Theme\Tags\before_page(); ?>
-<div id="page" class="site" itemscope="itemscope" itemtype="<?php UB_Theme\Tags\site_schema(); ?>">
+<?php AB_Theme\Tags\before_page(); ?>
+<div id="page" class="site" itemscope="itemscope" itemtype="<?php AB_Theme\Tags\site_schema(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'unbranded' ); ?></a>
 
 	<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">

@@ -2,12 +2,12 @@
 /**
  * Theme info page
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
-namespace UB_Theme\Includes;
+namespace AB_Theme\Includes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

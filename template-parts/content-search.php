@@ -2,8 +2,8 @@
 /**
  * Template part for displaying results in search pages
  *
- * @package    WebsiteApp
- * @subpackage UB_Theme
+ * @package    system
+ * @subpackage AB_Theme
  * @since      1.0.0
  */
 
@@ -16,20 +16,20 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php
-			UB_Theme\Tags\posted_on();
-			UB_Theme\Tags\posted_by();
+			AB_Theme\Tags\posted_on();
+			AB_Theme\Tags\posted_by();
 			?>
 		</div>
 		<?php endif; ?>
 	</header>
 
-	<?php UB_Theme\Tags\post_thumbnail(); ?>
+	<?php AB_Theme\Tags\post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
 
 	<footer class="entry-footer">
-		<?php UB_Theme\Tags\entry_footer(); ?>
+		<?php AB_Theme\Tags\entry_footer(); ?>
 	</footer><
 </article>
