@@ -2,7 +2,6 @@
 Theme Name: Greg Sweet
 */
 
-
 /**
  * General
  */
@@ -53,6 +52,10 @@ figure.alignright {
 .search-label {
 	margin: 0 0 0 0.3em;
 }
+
+input[type="search"] + button {
+	border-right: none;
+  }
 
 /**
  * Navigation
