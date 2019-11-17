@@ -247,3 +247,49 @@ h2 + .search-form {
 		}
 	}
 }
+
+@media ( prefers-color-scheme: dark ) {
+
+	input,
+	textarea,
+	select,
+	button {
+		background: $dark_gray;
+		border-color: $medium_gray;
+		color: $white;
+
+		&:focus {
+			border-color: $light_gray;
+		}
+	}
+
+	button,
+	button[type="submit"],
+	input[type="submit"],
+	input[type="button"],
+	input[type="reset"],
+	input[type="image"] {
+
+		&:hover,
+		&:focus {
+			background: $medium_gray;
+			border-color: $light_gray;
+		}
+	}
+
+	// Theme toggle button element.
+	.theme-toggle {
+		background: none;
+		border: none;
+
+		&:hover,
+		&:focus {
+			background: none;
+			border: none;
+		}
+
+		svg {
+			fill: #ffee00;
+		}
+	}
+}

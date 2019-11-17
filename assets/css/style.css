@@ -400,6 +400,36 @@ a:visited {
   /* Above WP toolbar. */
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #222222;
+    color: #ffffff;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  li,
+  a,
+  a:visited {
+    color: #ffffff;
+  }
+  #wpadminbar,
+  #wpadminbar .ab-top-menu > li.hover > .ab-item,
+  #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+  #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
+  #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
+  #wpadminbar .menupop .ab-sub-wrapper,
+  #wpadminbar .shortlink-input {
+    background: #333333;
+  }
+}
+
 .site {
   max-width: 1280px;
   margin: 0 auto;
@@ -713,6 +743,48 @@ h2 + .search-form {
   fill: #ffee00;
 }
 
+@media (prefers-color-scheme: dark) {
+  input,
+  textarea,
+  select,
+  button {
+    background: #333333;
+    border-color: #555555;
+    color: #ffffff;
+  }
+  input:focus,
+  textarea:focus,
+  select:focus,
+  button:focus {
+    border-color: #888888;
+  }
+  button:hover, button:focus,
+  button[type="submit"]:hover,
+  button[type="submit"]:focus,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus,
+  input[type="button"]:hover,
+  input[type="button"]:focus,
+  input[type="reset"]:hover,
+  input[type="reset"]:focus,
+  input[type="image"]:hover,
+  input[type="image"]:focus {
+    background: #555555;
+    border-color: #888888;
+  }
+  .theme-toggle {
+    background: none;
+    border: none;
+  }
+  .theme-toggle:hover, .theme-toggle:focus {
+    background: none;
+    border: none;
+  }
+  .theme-toggle svg {
+    fill: #ffee00;
+  }
+}
+
 /**
  * Header
  */
@@ -833,6 +905,15 @@ h2 + .search-form {
 
 .dark-mode .main-navigation ul ul li a:hover, .dark-mode .main-navigation ul ul li a:focus {
   background: #555555;
+}
+
+@media (prefers-color-scheme: dark) {
+  .main-navigation ul ul {
+    background: #333333;
+  }
+  .main-navigation ul ul li a:hover, .main-navigation ul ul li a:focus {
+    background: #555555;
+  }
 }
 
 @media screen and (min-width: 37.5em) {
