@@ -11,7 +11,7 @@
 
 <aside id="secondary" class="widget-area">
 
-	<p><?php AB_Theme\Includes\theme_mode(); ?></p>
+	<p><?php AB_Theme\Tags\theme_mode(); ?></p>
 
 	<?php
 		if ( is_active_sidebar( 'sidebar' ) ) :

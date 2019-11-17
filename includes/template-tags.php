@@ -329,3 +329,54 @@ function before_page() {
 function after_page() {
 	do_action( 'after_page' );
 }
+
+/**
+ * Theme toggle funcionality
+ *
+ * Prints the toggle button and adds the
+ * toggle script to the footer.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return mixed
+ */
+function theme_mode() {
+
+	// Add the toggle script to the footer.
+	add_action( 'wp_footer', 'AB_Theme\Includes\theme_mode_script' );
+
+	// Label before the icon.
+	$label = esc_html__( 'Switch mode: ', 'antibrand' );
+
+	// Moon icon for when the default light theme is active.
+	$moon = '<svg width="100%" height="100%" viewBox="0 0 513 513" aria-labelledby="theme-toggle-title theme-toggle-desc"><path id="path4103" d="M202.75,0.006c-1.223,-0.036 -2.491,0.088 -3.812,0.375c-116.434,27.751 -202.58,134.472 -198.813,260.563c-0.053,-1.65 -0.106,-3.294 -0.125,-4.938c0,129.122 95.597,235.915 219.875,253.469c8.43,1.312 16.973,2.209 25.625,2.656c128.701,6.741 237.809,-80.311 266,-198.594c3.677,-14.096 -13.488,-23.887 -23.906,-13.468c-40.449,41.061 -98.688,64.354 -161.813,57c-88.865,-9.806 -160.55,-82.136 -170.968,-171c-7.355,-63.125 15.938,-121.333 57,-161.782c9.441,-9.442 2.761,-23.931 -9.063,-24.281Zm-198.656,298.969c0.202,1.112 0.439,2.236 0.656,3.344c-0.218,-1.114 -0.453,-2.226 -0.656,-3.344Zm5,21.781c0.319,1.16 0.633,2.315 0.969,3.469c-0.336,-1.154 -0.65,-2.309 -0.969,-3.469Zm19.219,49.219c0.844,1.64 1.715,3.285 2.593,4.906c-0.88,-1.625 -1.747,-3.261 -2.593,-4.906Zm110.125,112.062c1.341,0.721 2.707,1.428 4.062,2.125c1.516,0.78 3.031,1.562 4.563,2.313c-1.529,-0.749 -3.05,-1.534 -4.563,-2.313c-1.363,-0.701 -2.713,-1.4 -4.062,-2.125Z"/>';
+
+	$moon .= sprintf(
+		'<title id="%1s">%2s</title>',
+		'theme-toggle-title',
+		esc_html__( 'Dark mode', 'antibrand' )
+	);
+	$moon .= sprintf(
+		'<desc id="%1s">%2s</desc>',
+		'theme-toggle-desc',
+		esc_html__( 'Switch the theme to dark mode', 'antibrand' )
+	);
+	$moon .= sprintf(
+		'<text class="screen-reader-text">%1s</text>',
+		esc_html__( 'Toggle light-dark theme', 'antibrand' )
+	);
+
+	$moon .= '</svg>';
+
+	// Toggle button markup.
+	$button = sprintf(
+		'<button id="theme-toggle" class="theme-toggle" type="button" name="dark_light" title="%1s">%2s %3s</button>',
+		esc_html__( 'Toggle light-dark theme', 'antibrand' ),
+		$label,
+		$moon
+	);
+
+	// Print the toggle button.
+	echo $button;
+
+}

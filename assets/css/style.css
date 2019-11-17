@@ -648,6 +648,26 @@ h2 + .search-form {
   margin-right: 0.3em;
 }
 
+.theme-toggle {
+  position: relative;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.theme-toggle:hover, .theme-toggle:focus {
+  background: none;
+  border: none;
+}
+
+.theme-toggle svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: baseline;
+  fill: currentColor;
+}
+
 .dark-mode input,
 .dark-mode textarea,
 .dark-mode select,
@@ -677,6 +697,20 @@ h2 + .search-form {
 .dark-mode input[type="image"]:focus {
   background: #555555;
   border-color: #888888;
+}
+
+.dark-mode .theme-toggle {
+  background: none;
+  border: none;
+}
+
+.dark-mode .theme-toggle:hover, .dark-mode .theme-toggle:focus {
+  background: none;
+  border: none;
+}
+
+.dark-mode .theme-toggle svg {
+  fill: #ffee00;
 }
 
 /**

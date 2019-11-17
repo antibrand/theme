@@ -180,6 +180,28 @@ h2 + .search-form {
 
 .search-submit {}
 
+// Theme toggle button element.
+.theme-toggle {
+	position: relative;
+	padding: 0;
+	background: none;
+	border: none;
+
+	&:hover,
+	&:focus {
+		background: none;
+		border: none;
+	}
+
+	svg {
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		vertical-align: baseline;
+		fill: currentColor;
+	}
+}
+
 .dark-mode {
 
 	input,
@@ -206,6 +228,22 @@ h2 + .search-form {
 		&:focus {
 			background: $medium_gray;
 			border-color: $light_gray;
+		}
+	}
+
+	// Theme toggle button element.
+	.theme-toggle {
+		background: none;
+		border: none;
+
+		&:hover,
+		&:focus {
+			background: none;
+			border: none;
+		}
+
+		svg {
+			fill: #ffee00;
 		}
 	}
 }
