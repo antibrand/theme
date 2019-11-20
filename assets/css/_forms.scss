@@ -180,61 +180,65 @@ h2 + .search-form {
 
 .search-submit {}
 
-// Theme toggle button element.
 .theme-toggle {
+	display: inline-block;
+}
+
+.no-js .theme-toggle {
+	display: none;
+}
+
+// Theme toggle button element.
+.theme-toggle-button {
 	position: relative;
+	margin: 0;
+	font-size: $px16;
 	padding: 0;
 	background: none;
 	border: none;
+	color: $text;
 
 	&:hover,
 	&:focus {
 		background: none;
 		border: none;
+		color: $text;
+
+		svg {
+			fill: currentColor;
+		}
+	}
+
+	span {
+		display: inline-block;
+
+		&:first-of-type {
+			transform: translateY(0.3em);
+		}
 	}
 
 	svg {
 		display: inline-block;
-		width: 1em;
-		height: 1em;
-		vertical-align: baseline;
+		width: 2em;
+		height: 2em;
+		vertical-align: middle;
 		fill: currentColor;
+		border-radius: 50%;
+		background-image: radial-gradient(
+			circle,
+			yellow 0%,
+			white 70%
+		);
 	}
 }
 
 .dark-mode {
 
-	input,
-	textarea,
-	select,
-	button {
-		background: $dark_gray;
-		border-color: $medium_gray;
-		color: $white;
-
-		&:focus {
-			border-color: $light_gray;
-		}
-	}
-
-	button,
-	button[type="submit"],
-	input[type="submit"],
-	input[type="button"],
-	input[type="reset"],
-	input[type="image"] {
-
-		&:hover,
-		&:focus {
-			background: $medium_gray;
-			border-color: $light_gray;
-		}
-	}
-
 	// Theme toggle button element.
-	.theme-toggle {
+	.theme-toggle-button {
 		background: none;
 		border: none;
+		color: $white;
 
 		&:hover,
 		&:focus {
@@ -243,7 +247,8 @@ h2 + .search-form {
 		}
 
 		svg {
-			fill: #ffee00;
+			fill: currentColor;
+			background: none;
 		}
 	}
 }

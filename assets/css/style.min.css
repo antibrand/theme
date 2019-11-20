@@ -679,68 +679,66 @@ h2 + .search-form {
 }
 
 .theme-toggle {
+  display: inline-block;
+}
+
+.no-js .theme-toggle {
+  display: none;
+}
+
+.theme-toggle-button {
   position: relative;
+  margin: 0;
+  font-size: 1rem;
   padding: 0;
   background: none;
   border: none;
+  color: #333333;
 }
 
-.theme-toggle:hover, .theme-toggle:focus {
+.theme-toggle-button:hover, .theme-toggle-button:focus {
   background: none;
   border: none;
+  color: #333333;
 }
 
-.theme-toggle svg {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  vertical-align: baseline;
+.theme-toggle-button:hover svg, .theme-toggle-button:focus svg {
   fill: currentColor;
 }
 
-.dark-mode input,
-.dark-mode textarea,
-.dark-mode select,
-.dark-mode button {
-  background: #333333;
-  border-color: #555555;
+.theme-toggle-button span {
+  display: inline-block;
+}
+
+.theme-toggle-button span:first-of-type {
+  -webkit-transform: translateY(0.3em);
+          transform: translateY(0.3em);
+}
+
+.theme-toggle-button svg {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  fill: currentColor;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, yellow 0%, white 70%);
+}
+
+.dark-mode .theme-toggle-button {
+  background: none;
+  border: none;
   color: #ffffff;
 }
 
-.dark-mode input:focus,
-.dark-mode textarea:focus,
-.dark-mode select:focus,
-.dark-mode button:focus {
-  border-color: #888888;
-}
-
-.dark-mode button:hover, .dark-mode button:focus,
-.dark-mode button[type="submit"]:hover,
-.dark-mode button[type="submit"]:focus,
-.dark-mode input[type="submit"]:hover,
-.dark-mode input[type="submit"]:focus,
-.dark-mode input[type="button"]:hover,
-.dark-mode input[type="button"]:focus,
-.dark-mode input[type="reset"]:hover,
-.dark-mode input[type="reset"]:focus,
-.dark-mode input[type="image"]:hover,
-.dark-mode input[type="image"]:focus {
-  background: #555555;
-  border-color: #888888;
-}
-
-.dark-mode .theme-toggle {
+.dark-mode .theme-toggle-button:hover, .dark-mode .theme-toggle-button:focus {
   background: none;
   border: none;
 }
 
-.dark-mode .theme-toggle:hover, .dark-mode .theme-toggle:focus {
+.dark-mode .theme-toggle-button svg {
+  fill: currentColor;
   background: none;
-  border: none;
-}
-
-.dark-mode .theme-toggle svg {
-  fill: #ffee00;
 }
 
 @media (prefers-color-scheme: dark) {
