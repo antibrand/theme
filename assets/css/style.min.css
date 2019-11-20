@@ -993,6 +993,12 @@ img {
   /* alt text */
 }
 
+img,
+figure {
+  max-width: 100%;
+  height: auto;
+}
+
 img.alignright,
 figure.alignright {
   margin: 1em 0 0 1em;
