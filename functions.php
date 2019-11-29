@@ -565,7 +565,7 @@ final class Functions {
 			__( 'Theme Options', 'antibrand' ),
 			__( 'Theme Options', 'antibrand' ),
 			'manage_options',
-			'antibrand-options',
+			'theme-options',
 			[ $this, 'theme_options_output' ]
 		);
 
@@ -676,7 +676,7 @@ final class Functions {
 			__( 'Theme Info', 'antibrand' ),
 			__( 'Theme Info', 'antibrand' ),
 			'manage_options',
-			'antibrand-info',
+			'theme-info',
 			[ $this, 'theme_info_output' ]
 		);
 
