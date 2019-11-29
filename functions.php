@@ -250,7 +250,7 @@ final class Functions {
 		/**
 		 * Custom header
 		 */
-		add_theme_support( 'custom-header', apply_filters( 'ab_custom_header_args', [
+		add_theme_support( 'custom-header', apply_filters( 'ab_custom_header', [
 			'width'              => 2048,
 			'height'             => 878,
 			'flex-height'        => true,
@@ -281,7 +281,7 @@ final class Functions {
 		];
 
 		// Apply a filter to logo arguments.
-		$logo = apply_filters( 'ab_header_image', $logo_args );
+		$logo = apply_filters( 'ab_custom_logo', $logo_args );
 
 		// Add logo support.
 		add_theme_support( 'custom-logo', $logo );
