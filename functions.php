@@ -193,58 +193,6 @@ final class Functions {
 		 ] );
 
 		/**
-		 * Block editor colors
-		 *
-		 * Match the following HEX codes with SASS color variables.
-		 * @see assets/css/_variables.scss
-		 *
-		 * @since 1.0.0
-		 */
-		$color_args = [
-			[
-				'name'  => __( 'Text', 'antibrand' ),
-				'slug'  => 'ub-text',
-				'color' => '#333333',
-			],
-			[
-				'name'  => __( 'Light Gray', 'antibrand' ),
-				'slug'  => 'ub-light-gray',
-				'color' => '#888888',
-			],
-			[
-				'name'  => __( 'Pale Gray', 'antibrand' ),
-				'slug'  => 'ub-pale-gray',
-				'color' => '#cccccc',
-			],
-			[
-				'name'  => __( 'White', 'antibrand' ),
-				'slug'  => 'ub-white',
-				'color' => '#ffffff',
-			],
-			[
-				'name'  => __( 'Error Red', 'antibrand' ),
-				'slug'  => 'ub-error',
-				'color' => '#dc3232',
-			],
-			[
-				'name'  => __( 'Warning Yellow', 'antibrand' ),
-				'slug'  => 'ub-warning',
-				'color' => '#ffb900',
-			],
-			[
-				'name'  => __( 'Success Green', 'antibrand' ),
-				'slug'  => 'ub-success',
-				'color' => '#46b450',
-			]
-		];
-
-		// Apply a filter to editor arguments.
-		$colors = apply_filters( 'ub_editor_colors', $color_args );
-
-		// Add theme color support.
-		add_theme_support( 'editor-color-palette', $colors );
-
-		/**
 		 * Set default image sizes
 		 *
 		 * Define the dimensions and the crop options.
@@ -275,9 +223,6 @@ final class Functions {
 
 		// Set the post thumbnail size, 16:9 HD Video.
 		set_post_thumbnail_size( 1280, 720, [ 'center', 'center' ] );
-
-		// Add wide image support for the block editor.
-		add_theme_support( 'align-wide' );
 
 		/**
 		 * Add image sizes
@@ -539,14 +484,7 @@ final class Functions {
 
 		// Add right-to-left styles if needed.
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'ab-blocks', get_theme_file_uri( '/assets/css/rtl.min.css' ), [ 'antibrand' ], '' );
-		}
-
-		// Block styles.
-		if ( function_exists( 'has_blocks' ) ) {
-			if ( has_blocks() ) {
-				wp_enqueue_style( 'ab-blocks', get_theme_file_uri( '/assets/css/blocks.min.css' ), [ 'antibrand' ], '' );
-			}
+			wp_enqueue_style( 'ab-rtl', get_theme_file_uri( '/assets/css/rtl.min.css' ), [ 'antibrand' ], '' );
 		}
 
 		// Print styles.
