@@ -21,20 +21,31 @@ if ( is_home() && ! is_front_page() ) {
 }
 
 /**
- * Conditional site logo
+ * Conditional site logo markup
+ *
+ * Uses a link to the home page if not on the home page.
  */
-if ( has_custom_logo() ) {
+if ( is_front_page() && has_custom_logo() ) {
+	$id        = get_theme_mod( 'custom_logo' );
+	$src       = wp_get_attachment_image_src( $id , 'full' );
+	$site_logo = sprintf(
+		'<img src="%1s" class="custom-logo" alt="%2s" itemprop="logo" width="512" height="512">',
+		$src[0],
+		get_bloginfo( 'name' )
+	);
+} elseif ( has_custom_logo() ) {
 	$site_logo = get_custom_logo();
 } else {
 	$site_logo = sprintf(
-		'<img src="%1s" class="custom-logo" alt="%2s" itemprop="logo" width="512" height="512">',
+		'<a href="%1s" class="custom-logo-link" rel="home" itemprop="url"><img src="%2s" class="custom-logo" alt="%3s" itemprop="logo" width="512" height="512"></a>',
+		esc_url( home_url( '/' ) ),
 		get_theme_file_uri( '/assets/images/non-logo.jpg' ),
 		get_bloginfo( 'name' )
 	);
 }
 
 /**
- * Conditional site name elements
+ * Conditional site name markup
  *
  * Uses an h1 element on the home page with no link.
  * Uses a p element on all other pages with a link to
@@ -56,7 +67,7 @@ if ( is_front_page() ) {
 $site_title = apply_filters( 'ab_site_title', $site_title );
 
 /**
- * Conditional site description
+ * Conditional site description markup
  *
  * Prints nothing if the description/tagline is field empty.
  * Prints a p element if the customizer is open, wether the
