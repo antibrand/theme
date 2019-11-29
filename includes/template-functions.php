@@ -67,7 +67,7 @@ add_action( 'wp_head', 'AB_Theme\Includes\pingback_header' );
  * @access public
  * @return mixed
  */
-function ab_main_menu_fallback() {
+function main_menu_fallback() {
 
 	$customize_link = site_url();
 

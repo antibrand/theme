@@ -17,7 +17,7 @@
  * users and visitors.
  */
 if ( current_user_can( 'manage_options' ) ) {
-	$fallback_cb = 'AB_Theme\Includes\ab_main_menu_fallback';
+	$fallback_cb = 'AB_Theme\Includes\main_menu_fallback';
 } else {
 	$fallback_cb = 'wp_page_menu';
 }
