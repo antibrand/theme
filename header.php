@@ -1,8 +1,9 @@
 <?php
 /**
- * The header for our theme
+ * Begin HTML markup
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * Renders the `<head>` section, gets site
+ * identity and navigation.
  *
  * @package    system
  * @subpackage AB_Theme
@@ -132,7 +133,7 @@ $site_description = apply_filters( 'ab_site_title', $site_description );
 	</nav>
 
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
-		<div class="site-branding">
+		<div class="site-identity">
 			<div class="site-logo">
 				<?php echo $site_logo; ?>
 			</div>

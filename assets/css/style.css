@@ -821,7 +821,7 @@ h2 + .search-form {
 /**
  * Header
  */
-.site-branding {
+.site-identity {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -831,28 +831,28 @@ h2 + .search-form {
   padding: 2em 0 1em;
 }
 
-.site-branding .site-logo {
+.site-identity .site-logo {
   max-width: 90px;
   margin-right: 1em;
 }
 
-.site-branding .site-logo img {
+.site-identity .site-logo img {
   display: block;
 }
 
-.site-branding .site-title {
+.site-identity .site-title {
   margin: 0;
   /* Match <p> tag to <h1> tag on front page */
   font-size: 2em;
   font-weight: bold;
 }
 
-.site-branding .site-title a {
+.site-identity .site-title a {
   color: inherit;
   text-decoration: inherit;
 }
 
-.site-branding .site-description {
+.site-identity .site-description {
   margin: 0;
 }
 
