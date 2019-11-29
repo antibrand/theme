@@ -21,6 +21,19 @@ if ( is_home() && ! is_front_page() ) {
 }
 
 /**
+ * Conditional site logo
+ */
+if ( has_custom_logo() ) {
+	$site_logo = get_custom_logo();
+} else {
+	$site_logo = sprintf(
+		'<img src="%1s" class="custom-logo" alt="%2s" itemprop="logo" width="512" height="512">',
+		get_theme_file_uri( '/assets/images/non-logo.jpg' ),
+		get_bloginfo( 'name' )
+	);
+}
+
+/**
  * Conditional site name elements
  *
  * Uses an h1 element on the home page with no link.
@@ -109,27 +122,29 @@ $site_description = apply_filters( 'ab_site_title', $site_description );
 
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			echo $site_title;
-			echo $site_description;
-			?>
-			<div class="site-header-image" role="presentation">
-				<figure>
-					<?php
-					if ( has_header_image() ) {
-						$attributes = [
-							'alt'  => ''
-						];
-						the_header_image_tag( $attributes );
-					} else {
-						echo sprintf(
-							'<img src="%1s" alt="" width="2048" height="878" />',
-							get_theme_file_uri( '/assets/images/default-header.jpg' )
-						);
-					} ?>
-				</figure>
+			<div class="site-logo">
+				<?php echo $site_logo; ?>
 			</div>
+			<div class="site-title-description">
+				<?php echo $site_title; ?>
+				<?php echo $site_description; ?>
+			</div>
+		</div>
+		<div class="site-header-image" role="presentation">
+			<figure>
+				<?php
+				if ( has_header_image() ) {
+					$attributes = [
+						'alt'  => ''
+					];
+					the_header_image_tag( $attributes );
+				} else {
+					echo sprintf(
+						'<img src="%1s" alt="" width="2048" height="878" />',
+						get_theme_file_uri( '/assets/images/default-header.jpg' )
+					);
+				} ?>
+			</figure>
 		</div>
 	</header>
 

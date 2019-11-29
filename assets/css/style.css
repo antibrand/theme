@@ -786,18 +786,38 @@ h2 + .search-form {
 /**
  * Header
  */
-.site-title {
+.site-branding {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2em 0 1em;
+}
+
+.site-branding .site-logo {
+  max-width: 90px;
+  margin-right: 1em;
+}
+
+.site-branding .site-logo img {
+  display: block;
+}
+
+.site-branding .site-title {
+  margin: 0;
   /* Match <p> tag to <h1> tag on front page */
   font-size: 2em;
   font-weight: bold;
 }
 
-.site-title a {
+.site-branding .site-title a {
   color: inherit;
   text-decoration: inherit;
 }
 
-.site-description {
+.site-branding .site-description {
   margin: 0;
 }
 
