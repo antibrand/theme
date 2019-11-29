@@ -513,7 +513,7 @@ button {
   max-width: 640px;
   padding: 1rem;
   font: inherit;
-  background: #ffffff;
+  background: inherit;
   border: solid 1px #cccccc;
 }
 
@@ -725,6 +725,37 @@ h2 + .search-form {
   background-image: radial-gradient(circle, yellow 0%, white 70%);
 }
 
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select,
+.dark-mode button {
+  background: #333333;
+  border-color: #555555;
+  color: #ffffff;
+}
+
+.dark-mode input:focus,
+.dark-mode textarea:focus,
+.dark-mode select:focus,
+.dark-mode button:focus {
+  border-color: #888888;
+}
+
+.dark-mode button:hover, .dark-mode button:focus,
+.dark-mode button[type="submit"]:hover,
+.dark-mode button[type="submit"]:focus,
+.dark-mode input[type="submit"]:hover,
+.dark-mode input[type="submit"]:focus,
+.dark-mode input[type="button"]:hover,
+.dark-mode input[type="button"]:focus,
+.dark-mode input[type="reset"]:hover,
+.dark-mode input[type="reset"]:focus,
+.dark-mode input[type="image"]:hover,
+.dark-mode input[type="image"]:focus {
+  background: #555555;
+  border-color: #888888;
+}
+
 .dark-mode .theme-toggle-button {
   background: none;
   border: none;
@@ -770,15 +801,15 @@ h2 + .search-form {
     background: #555555;
     border-color: #888888;
   }
-  .theme-toggle {
+  .theme-toggle-button {
     background: none;
     border: none;
   }
-  .theme-toggle:hover, .theme-toggle:focus {
+  .theme-toggle-button:hover, .theme-toggle-button:focus {
     background: none;
     border: none;
   }
-  .theme-toggle svg {
+  .theme-toggle-button svg {
     fill: #ffee00;
   }
 }
