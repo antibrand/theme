@@ -11,6 +11,7 @@
  * @todo       Add hooks for nav above or below header.
  */
 
+// Conditional canonical link.
 if ( is_home() && ! is_front_page() ) {
     $canonical = get_permalink( get_option( 'page_for_posts' ) );
 } elseif ( is_archive() ) {
@@ -19,6 +20,49 @@ if ( is_home() && ! is_front_page() ) {
     $canonical = get_permalink();
 }
 
+/**
+ * Conditional site name elements
+ *
+ * Uses an h1 element on the home page with no link.
+ * Uses a p element on all other pages with a link to
+ * the home page.
+ */
+if ( is_front_page() ) {
+	$site_title = sprintf(
+		'<h1 class="site-title">%1s</h1>',
+		get_bloginfo( 'name' )
+	);
+} else {
+	$site_title = sprintf(
+		'<p class="site-title"><a href="%1s" rel="home">%2s</a></p>',
+		esc_url( home_url( '/' ) ),
+		get_bloginfo( 'name' )
+	);
+}
+// Apply a filter for customization.
+$site_title = apply_filters( 'ab_site_title', $site_title );
+
+/**
+ * Conditional site description
+ *
+ * Prints nothing if the description/tagline is field empty.
+ * Prints a p element if the customizer is open, wether the
+ * description/tagline is field empty or not because the Site
+ * Identity section can edit the description.
+ */
+$get_description = get_bloginfo( 'description', 'display' );
+if ( ! empty( $get_description ) || is_customize_preview() ) {
+	$site_description = sprintf(
+		'<p class="site-description">%1s</p>',
+		$get_description
+	);
+} else {
+	$site_description = null;
+}
+// Apply a filter for customization.
+$site_description = apply_filters( 'ab_site_title', $site_description );
+
+// Begin HTML output.
 ?>
 <!doctype html>
 <?php do_action( 'before_html' ); ?>
@@ -67,16 +111,9 @@ if ( is_home() && ! is_front_page() ) {
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
-			if ( is_front_page() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif;
-			$site_description = get_bloginfo( 'description', 'display' );
-			if ( $site_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $site_description; ?></p>
-			<?php endif; ?>
+			echo $site_title;
+			echo $site_description;
+			?>
 			<div class="site-header-image" role="presentation">
 				<figure>
 					<?php
