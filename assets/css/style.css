@@ -868,6 +868,19 @@ h2 + .search-form {
   text-decoration: none;
 }
 
+.main-navigation button {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.main-navigation button svg {
+  width: auto;
+  height: 1em;
+  vertical-align: baseline;
+  fill: currentColor;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {

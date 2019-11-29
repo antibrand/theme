@@ -64,6 +64,19 @@
 		display: inline-block;
 		text-decoration: none;
 	}
+
+	button {
+		background: none;
+		border: none;
+		color: inherit;
+
+		svg {
+			width: auto;
+			height: 1em;
+			vertical-align: baseline;
+			fill: currentColor;
+		}
+	}
 }
 
 /* Small menu. */
