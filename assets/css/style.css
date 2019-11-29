@@ -793,7 +793,8 @@ h2 + .search-form {
 }
 
 .site-title a {
-  text-decoration: none;
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .site-description {
