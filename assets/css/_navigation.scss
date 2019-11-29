@@ -52,6 +52,8 @@
 
 	li {
 		overflow: visible;
+		font-size: $px18;
+		font-weight: bold;
 
 		&:hover > ul,
 		&:focus > ul,

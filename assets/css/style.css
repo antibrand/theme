@@ -876,6 +876,8 @@ h2 + .search-form {
 
 .main-navigation li {
   overflow: visible;
+  font-size: 1.125rem;
+  font-weight: bold;
 }
 
 .main-navigation li:hover > ul,
