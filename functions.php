@@ -250,7 +250,7 @@ final class Functions {
 		/**
 		 * Custom header
 		 */
-		add_theme_support( 'custom-header', apply_filters( 'ub_custom_header_args', [
+		add_theme_support( 'custom-header', apply_filters( 'ab_custom_header_args', [
 			'width'              => 2048,
 			'height'             => 878,
 			'flex-height'        => true,
@@ -281,7 +281,7 @@ final class Functions {
 		];
 
 		// Apply a filter to logo arguments.
-		$logo = apply_filters( 'ub_header_image', $logo_args );
+		$logo = apply_filters( 'ab_header_image', $logo_args );
 
 		// Add logo support.
 		add_theme_support( 'custom-logo', $logo );
@@ -291,10 +291,10 @@ final class Functions {
 		 *
 		 * @since 1.0.0
 		 */
-		$ub_content_width = apply_filters( 'ub_content_width', 1280 );
+		$ab_content_width = apply_filters( 'ab_content_width', 1280 );
 
 		if ( ! isset( $content_width ) ) {
-			$content_width = $ub_content_width;
+			$content_width = $ab_content_width;
 		}
 
 		// Embed sizes.
@@ -403,7 +403,7 @@ final class Functions {
 		$disable = add_theme_support( 'disable-custom-colors', [] );
 
 		// Apply a filter for conditionally disabling the picker.
-		$custom_colors = apply_filters( 'ub_editor_custom_colors', '__return_false' );
+		$custom_colors = apply_filters( 'ab_editor_custom_colors', '__return_false' );
 
 		return $custom_colors;
 
@@ -734,13 +734,13 @@ final class Functions {
  * @access public
  * @return object
  */
-function ub_theme() {
+function ab_theme() {
 
-	$ub_theme = Functions::get_instance();
+	$ab_theme = Functions::get_instance();
 
-	return $ub_theme;
+	return $ab_theme;
 
 }
 
 // Run the Functions class.
-ub_theme();
+ab_theme();
