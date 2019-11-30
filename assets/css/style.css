@@ -294,7 +294,7 @@ body {
   background: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   line-height: 1.5;
-  color: #333333;
+  color: #222222;
 }
 
 body.dark-mode {
@@ -697,13 +697,13 @@ h2 + .search-form {
   padding: 0;
   background: none;
   border: none;
-  color: #333333;
+  color: #222222;
 }
 
 .theme-toggle-button:hover, .theme-toggle-button:focus {
   background: none;
   border: none;
-  color: #333333;
+  color: #222222;
 }
 
 .theme-toggle-button:hover svg, .theme-toggle-button:focus svg {
