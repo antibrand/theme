@@ -104,7 +104,7 @@ function theme_mode_script() {
 	$bulb_on .= sprintf(
 		'<title id="%1s">%2s</title>',
 		'theme-toggle-title',
-		esc_html__( 'Lights on', 'antibrand' )
+		esc_html__( 'Turn lights off', 'antibrand' )
 	);
 	$bulb_on .= sprintf(
 		'<desc id="%1s">%2s</desc>',
@@ -132,7 +132,7 @@ function theme_mode_script() {
 	$bulb_off .= sprintf(
 		'<title id="%1s">%2s</title>',
 		'theme-toggle-title',
-		esc_html__( 'Lights off', 'antibrand' )
+		esc_html__( 'Turn lights on', 'antibrand' )
 	);
 	$bulb_off .= sprintf(
 		'<desc id="%1s">%2s</desc>',
