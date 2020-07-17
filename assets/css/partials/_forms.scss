@@ -327,7 +327,7 @@ select {
 
 	&:disabled,
 	&.disabled {
-		background: rgba($color: $pale_gray, $alpha: 0.325);
+		background-color: rgba($color: $pale_gray, $alpha: 0.325);
 		color: rgba($color: $light_gray, $alpha: 0.85);
 		cursor: not-allowed;
 
@@ -509,6 +509,42 @@ h2 + .search-form {
 	}
 }
 
+/// Checkbox input color functions for dark mode
+///
+/// @function checked_bg_color Function to encode the hashtag in the
+///		variable for checkbox background image checked color in the
+///     SVG fill attributes.
+
+// Checkbox checked background color.
+@function checked_bg_color_dark() {
+	@return '%23' + str-slice( '#{$form_checked_dark}', 2, -1 );
+}
+
+/// Select form fields for dark mode
+///
+/// Make sure dimensional changes match various
+/// text and submit type inputs.
+///
+/// @function select_bg_color Function to encode the hashtag in the
+/// 	variable for arrow background image color in the SVG fill attributes.
+///
+/// @function select_action_bg_color Function to encode the hashtag in the
+///		variable for arrow background image focus color in the SVG fill attributes.
+///
+/// Background size affects the size of the arrow down image.
+/// Right padding is the same as the width of the background
+/// size of the right-positioned background image.
+
+// Arrow color.
+@function select_bg_color_dark() {
+	@return '%23' + str-slice( '#{$form_text_color_dark}', 2, -1 );
+}
+
+// Arrow focus color.
+@function select_action_bg_color_dark() {
+	@return '%23' + str-slice( '#{$form_focus_dark}', 2, -1 );
+}
+
 .dark-mode {
 
 	input,
@@ -523,6 +559,46 @@ h2 + .search-form {
 		}
 	}
 
+	input {
+
+		&[type="radio"] {
+
+			&:checked:before {
+				background-color: $form_checked;
+			}
+		}
+
+		&[type="checkbox"] {
+
+			&:checked:before {
+				background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70.975021 61.296299'><path fill='#{ checked_bg_color_dark() }' d='m 14.272702,27.386395 c -2.598572,-3.72522 -17.7285244,7.677268 -13.546388,9.449279 8.166215,3.460104 10.394596,13.253897 14.603394,20.935246 2.598633,3.725281 7.772705,4.647095 11.497925,2.048584 1.059265,-0.738892 1.883179,-1.690186 2.472595,-2.753113 l 0.0067,0.0035 c 0,0 0.01819,-0.04108 0.03296,-0.07416 C 29.527815,56.648991 29.694014,56.29279 29.83,55.925114 32.835005,49.458008 48.748702,16.785099 70.97502,0 c 0,1e-6 -27.988586,3.156012 -48.854187,41.086309 -1.684658,-5.22941 -4.95163,-9.547559 -7.848131,-13.699914 z' /></svg>");
+			}
+		}
+	}
+
+	// Select field.
+	select {
+
+		&:not([multiple]):not([size]) {
+			background-image: url( "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{ select_bg_color_dark() }' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E" );
+
+			&:focus {
+				background-image: url( "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{ select_action_bg_color_dark() }' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E" );
+			}
+		}
+
+		&:disabled,
+		&.disabled {
+			background-color: $form_background_color_dark;
+			color: rgba($color: $light_gray, $alpha: 0.85);
+			cursor: not-allowed;
+
+			&:not([multiple]):not([size]) {
+				background-image: none;
+			}
+		}
+	}
+
 	form button,
 	button[type="submit"],
 	input[type="submit"],
@@ -532,25 +608,12 @@ h2 + .search-form {
 		background-color: $button_background_color_dark;
 		border-color: $button_border_color_dark;
 		color: $button_text_color_dark;
-		font-weight: bold;
 
 		&:hover,
 		&:focus {
 			background-color: $button_action_background_color_dark;
 			border-color: $button_action_border_color_dark;
 			color: $button_action_text_color_dark;
-		}
-
-		&.menu-toggle {
-			background: none;
-			border: none;
-			color: inherit;
-
-			svg {
-				width: 1rem;
-				height: 1rem;
-				fill: currentColor;
-			}
 		}
 	}
 
@@ -572,20 +635,11 @@ h2 + .search-form {
 
 	// Theme toggle button element.
 	.theme-toggle-button {
-		background: none;
-		border: none;
 		color: $white;
 
 		&:hover,
 		&:focus {
-			background: none;
-			border: none;
 			color: $white;
-		}
-
-		svg {
-			fill: currentColor;
-			background: none;
 		}
 	}
 }
@@ -604,6 +658,46 @@ h2 + .search-form {
 		}
 	}
 
+	input {
+
+		&[type="radio"] {
+
+			&:checked:before {
+				background-color: $form_checked;
+			}
+		}
+
+		&[type="checkbox"] {
+
+			&:checked:before {
+				background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70.975021 61.296299'><path fill='#{ checked_bg_color_dark() }' d='m 14.272702,27.386395 c -2.598572,-3.72522 -17.7285244,7.677268 -13.546388,9.449279 8.166215,3.460104 10.394596,13.253897 14.603394,20.935246 2.598633,3.725281 7.772705,4.647095 11.497925,2.048584 1.059265,-0.738892 1.883179,-1.690186 2.472595,-2.753113 l 0.0067,0.0035 c 0,0 0.01819,-0.04108 0.03296,-0.07416 C 29.527815,56.648991 29.694014,56.29279 29.83,55.925114 32.835005,49.458008 48.748702,16.785099 70.97502,0 c 0,1e-6 -27.988586,3.156012 -48.854187,41.086309 -1.684658,-5.22941 -4.95163,-9.547559 -7.848131,-13.699914 z' /></svg>");
+			}
+		}
+	}
+
+	// Select field.
+	select {
+
+		&:not([multiple]):not([size]) {
+			background-image: url( "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{ select_bg_color_dark() }' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E" );
+
+			&:focus {
+				background-image: url( "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{ select_action_bg_color_dark() }' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E" );
+			}
+		}
+
+		&:disabled,
+		&.disabled {
+			background-color: $form_background_color_dark;
+			color: rgba($color: $light_gray, $alpha: 0.85);
+			cursor: not-allowed;
+
+			&:not([multiple]):not([size]) {
+				background-image: none;
+			}
+		}
+	}
+
 	form button,
 	button[type="submit"],
 	input[type="submit"],
@@ -613,25 +707,12 @@ h2 + .search-form {
 		background-color: $button_background_color_dark;
 		border-color: $button_border_color_dark;
 		color: $button_text_color_dark;
-		font-weight: bold;
 
 		&:hover,
 		&:focus {
 			background-color: $button_action_background_color_dark;
 			border-color: $button_action_border_color_dark;
 			color: $button_action_text_color_dark;
-		}
-
-		&.menu-toggle {
-			background: none;
-			border: none;
-			color: inherit;
-
-			svg {
-				width: 1rem;
-				height: 1rem;
-				fill: currentColor;
-			}
 		}
 	}
 

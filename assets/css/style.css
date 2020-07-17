@@ -1046,7 +1046,7 @@ select option {
 }
 
 select:disabled, select.disabled {
-  background: rgba(204, 204, 204, 0.325);
+  background-color: rgba(204, 204, 204, 0.325);
   color: rgba(136, 136, 136, 0.85);
   cursor: not-allowed;
 }
@@ -1265,6 +1265,32 @@ h2 + .search-form {
   border-color: #3ad4fb;
 }
 
+.dark-mode input[type="radio"]:checked:before {
+  background-color: #005fd6;
+}
+
+.dark-mode input[type="checkbox"]:checked:before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70.975021 61.296299'><path fill='%233ad4fb' d='m 14.272702,27.386395 c -2.598572,-3.72522 -17.7285244,7.677268 -13.546388,9.449279 8.166215,3.460104 10.394596,13.253897 14.603394,20.935246 2.598633,3.725281 7.772705,4.647095 11.497925,2.048584 1.059265,-0.738892 1.883179,-1.690186 2.472595,-2.753113 l 0.0067,0.0035 c 0,0 0.01819,-0.04108 0.03296,-0.07416 C 29.527815,56.648991 29.694014,56.29279 29.83,55.925114 32.835005,49.458008 48.748702,16.785099 70.97502,0 c 0,1e-6 -27.988586,3.156012 -48.854187,41.086309 -1.684658,-5.22941 -4.95163,-9.547559 -7.848131,-13.699914 z' /></svg>");
+}
+
+.dark-mode select:not([multiple]):not([size]) {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+}
+
+.dark-mode select:not([multiple]):not([size]):focus {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233ad4fb' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+}
+
+.dark-mode select:disabled, .dark-mode select.disabled {
+  background-color: #2f2f2f;
+  color: rgba(136, 136, 136, 0.85);
+  cursor: not-allowed;
+}
+
+.dark-mode select:disabled:not([multiple]):not([size]), .dark-mode select.disabled:not([multiple]):not([size]) {
+  background-image: none;
+}
+
 .dark-mode form button,
 .dark-mode button[type="submit"],
 .dark-mode input[type="submit"],
@@ -1274,7 +1300,6 @@ h2 + .search-form {
   background-color: #2f2f2f;
   border-color: #626262;
   color: #ffffff;
-  font-weight: bold;
 }
 
 .dark-mode form button:hover, .dark-mode form button:focus,
@@ -1291,28 +1316,6 @@ h2 + .search-form {
   background-color: #ffee00;
   border-color: #626262;
   color: #222222;
-}
-
-.dark-mode form button.menu-toggle,
-.dark-mode button[type="submit"].menu-toggle,
-.dark-mode input[type="submit"].menu-toggle,
-.dark-mode input[type="button"].menu-toggle,
-.dark-mode input[type="reset"].menu-toggle,
-.dark-mode input[type="image"].menu-toggle {
-  background: none;
-  border: none;
-  color: inherit;
-}
-
-.dark-mode form button.menu-toggle svg,
-.dark-mode button[type="submit"].menu-toggle svg,
-.dark-mode input[type="submit"].menu-toggle svg,
-.dark-mode input[type="button"].menu-toggle svg,
-.dark-mode input[type="reset"].menu-toggle svg,
-.dark-mode input[type="image"].menu-toggle svg {
-  width: 1rem;
-  height: 1rem;
-  fill: currentColor;
 }
 
 .dark-mode *::-webkit-input-placeholder,
@@ -1332,20 +1335,11 @@ h2 + .search-form {
 }
 
 .dark-mode .theme-toggle-button {
-  background: none;
-  border: none;
   color: #ffffff;
 }
 
 .dark-mode .theme-toggle-button:hover, .dark-mode .theme-toggle-button:focus {
-  background: none;
-  border: none;
   color: #ffffff;
-}
-
-.dark-mode .theme-toggle-button svg {
-  fill: currentColor;
-  background: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1362,6 +1356,26 @@ h2 + .search-form {
   button:focus {
     border-color: #3ad4fb;
   }
+  input[type="radio"]:checked:before {
+    background-color: #005fd6;
+  }
+  input[type="checkbox"]:checked:before {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70.975021 61.296299'><path fill='%233ad4fb' d='m 14.272702,27.386395 c -2.598572,-3.72522 -17.7285244,7.677268 -13.546388,9.449279 8.166215,3.460104 10.394596,13.253897 14.603394,20.935246 2.598633,3.725281 7.772705,4.647095 11.497925,2.048584 1.059265,-0.738892 1.883179,-1.690186 2.472595,-2.753113 l 0.0067,0.0035 c 0,0 0.01819,-0.04108 0.03296,-0.07416 C 29.527815,56.648991 29.694014,56.29279 29.83,55.925114 32.835005,49.458008 48.748702,16.785099 70.97502,0 c 0,1e-6 -27.988586,3.156012 -48.854187,41.086309 -1.684658,-5.22941 -4.95163,-9.547559 -7.848131,-13.699914 z' /></svg>");
+  }
+  select:not([multiple]):not([size]) {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+  }
+  select:not([multiple]):not([size]):focus {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233ad4fb' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+  }
+  select:disabled, select.disabled {
+    background-color: #2f2f2f;
+    color: rgba(136, 136, 136, 0.85);
+    cursor: not-allowed;
+  }
+  select:disabled:not([multiple]):not([size]), select.disabled:not([multiple]):not([size]) {
+    background-image: none;
+  }
   form button,
   button[type="submit"],
   input[type="submit"],
@@ -1371,7 +1385,6 @@ h2 + .search-form {
     background-color: #2f2f2f;
     border-color: #626262;
     color: #ffffff;
-    font-weight: bold;
   }
   form button:hover, form button:focus,
   button[type="submit"]:hover,
@@ -1387,26 +1400,6 @@ h2 + .search-form {
     background-color: #ffee00;
     border-color: #626262;
     color: #222222;
-  }
-  form button.menu-toggle,
-  button[type="submit"].menu-toggle,
-  input[type="submit"].menu-toggle,
-  input[type="button"].menu-toggle,
-  input[type="reset"].menu-toggle,
-  input[type="image"].menu-toggle {
-    background: none;
-    border: none;
-    color: inherit;
-  }
-  form button.menu-toggle svg,
-  button[type="submit"].menu-toggle svg,
-  input[type="submit"].menu-toggle svg,
-  input[type="button"].menu-toggle svg,
-  input[type="reset"].menu-toggle svg,
-  input[type="image"].menu-toggle svg {
-    width: 1rem;
-    height: 1rem;
-    fill: currentColor;
   }
   *::-webkit-input-placeholder,
   *:-moz-placeholder,
