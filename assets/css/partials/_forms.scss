@@ -206,6 +206,11 @@ input {
 
 	&[type="search"] {
 		-webkit-appearance: textfield;
+
+		&.search {
+			height: 3em;
+			line-height: 3em;
+		}
 	}
 
 	&[type="search"]::-webkit-search-decoration {
@@ -396,6 +401,15 @@ input[type="image"] {
 		background: $button_action_background_color;
 		border-color: $button_action_border_color;
 		color: $button_action_text_color;
+	}
+
+	&.search-submit {
+		height: 3em;
+
+		svg {
+			width: 1em;
+			height: 1em;
+		}
 	}
 
 	&.menu-toggle {
@@ -635,11 +649,20 @@ h2 + .search-form {
 
 	// Theme toggle button element.
 	.theme-toggle-button {
+		background: none;
+		border: none;
 		color: $white;
 
 		&:hover,
 		&:focus {
+			background: none;
+			border: none;
 			color: $white;
+		}
+
+		svg {
+			fill: currentColor;
+			background: none;
 		}
 	}
 }
