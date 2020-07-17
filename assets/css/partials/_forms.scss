@@ -303,6 +303,7 @@ h2 + .search-form {
 		&:focus {
 			background: none;
 			border: none;
+			color: $white;
 		}
 
 		svg {
