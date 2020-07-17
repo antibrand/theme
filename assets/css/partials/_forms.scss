@@ -361,17 +361,28 @@ select {
 	}
 }
 
-button,
+form button,
 button[type="submit"],
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
 input[type="image"] {
-	width: auto;
-	cursor: pointer;
+	display: inline-block;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0.75rem 1rem;
 	background: $button_background_color;
 	border: solid 1px $button_border_color;
+	font-size: $px14;
 	font-weight: bold;
+	font-weight: 700;
+	line-height: 1;
+	text-decoration: none;
+	color: $button_text_color;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-appearance: none;
+	transition: all .1s linear;
 
 	svg {
 		width: 24px;
@@ -397,6 +408,10 @@ input[type="image"] {
 			height: 1rem;
 			fill: currentColor;
 		}
+	}
+
+	&.search-submit {
+		padding: 0.5em 1em;
 	}
 }
 
@@ -441,8 +456,6 @@ h2 + .search-form {
 .search-label {
 	margin-right: 0.3em
 }
-
-.search-submit {}
 
 .theme-toggle {
 	display: inline-block;
@@ -502,7 +515,7 @@ h2 + .search-form {
 	textarea,
 	select,
 	button {
-		background: $form_background_color_dark;
+		background-color: $form_background_color_dark;
 		border-color: $form_border_color_dark;
 
 		&:focus {
@@ -510,19 +523,20 @@ h2 + .search-form {
 		}
 	}
 
-	button,
+	form button,
 	button[type="submit"],
 	input[type="submit"],
 	input[type="button"],
 	input[type="reset"],
 	input[type="image"] {
-		background: $button_background_color_dark;
+		background-color: $button_background_color_dark;
 		border-color: $button_border_color_dark;
+		color: $button_text_color_dark;
 		font-weight: bold;
 
 		&:hover,
 		&:focus {
-			background: $button_action_background_color_dark;
+			background-color: $button_action_background_color_dark;
 			border-color: $button_action_border_color_dark;
 			color: $button_action_text_color_dark;
 		}
@@ -582,7 +596,7 @@ h2 + .search-form {
 	textarea,
 	select,
 	button {
-		background: $form_background_color_dark;
+		background-color: $form_background_color_dark;
 		border-color: $form_border_color_dark;
 
 		&:focus {
@@ -590,19 +604,20 @@ h2 + .search-form {
 		}
 	}
 
-	button,
+	form button,
 	button[type="submit"],
 	input[type="submit"],
 	input[type="button"],
 	input[type="reset"],
 	input[type="image"] {
-		background: $button_background_color_dark;
+		background-color: $button_background_color_dark;
 		border-color: $button_border_color_dark;
+		color: $button_text_color_dark;
 		font-weight: bold;
 
 		&:hover,
 		&:focus {
-			background: $button_action_background_color_dark;
+			background-color: $button_action_background_color_dark;
 			border-color: $button_action_border_color_dark;
 			color: $button_action_text_color_dark;
 		}

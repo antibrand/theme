@@ -1078,20 +1078,32 @@ textarea:disabled, textarea.disabled {
   }
 }
 
-button,
+form button,
 button[type="submit"],
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
 input[type="image"] {
-  width: auto;
-  cursor: pointer;
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0.75rem 1rem;
   background: #ffffff;
   border: solid 1px #888888;
+  font-size: 0.875rem;
   font-weight: bold;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  color: #222222;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
 }
 
-button svg,
+form button svg,
 button[type="submit"] svg,
 input[type="submit"] svg,
 input[type="button"] svg,
@@ -1103,7 +1115,7 @@ input[type="image"] svg {
   fill: currentColor;
 }
 
-button:hover, button:focus,
+form button:hover, form button:focus,
 button[type="submit"]:hover,
 button[type="submit"]:focus,
 input[type="submit"]:hover,
@@ -1119,7 +1131,7 @@ input[type="image"]:focus {
   color: #222222;
 }
 
-button.menu-toggle,
+form button.menu-toggle,
 button[type="submit"].menu-toggle,
 input[type="submit"].menu-toggle,
 input[type="button"].menu-toggle,
@@ -1130,7 +1142,7 @@ input[type="image"].menu-toggle {
   color: inherit;
 }
 
-button.menu-toggle svg,
+form button.menu-toggle svg,
 button[type="submit"].menu-toggle svg,
 input[type="submit"].menu-toggle svg,
 input[type="button"].menu-toggle svg,
@@ -1139,6 +1151,15 @@ input[type="image"].menu-toggle svg {
   width: 1rem;
   height: 1rem;
   fill: currentColor;
+}
+
+form button.search-submit,
+button[type="submit"].search-submit,
+input[type="submit"].search-submit,
+input[type="button"].search-submit,
+input[type="reset"].search-submit,
+input[type="image"].search-submit {
+  padding: 0.5em 1em;
 }
 
 *::-webkit-input-placeholder,
@@ -1233,7 +1254,7 @@ h2 + .search-form {
 .dark-mode textarea,
 .dark-mode select,
 .dark-mode button {
-  background: #2f2f2f;
+  background-color: #2f2f2f;
   border-color: #626262;
 }
 
@@ -1244,18 +1265,19 @@ h2 + .search-form {
   border-color: #3ad4fb;
 }
 
-.dark-mode button,
+.dark-mode form button,
 .dark-mode button[type="submit"],
 .dark-mode input[type="submit"],
 .dark-mode input[type="button"],
 .dark-mode input[type="reset"],
 .dark-mode input[type="image"] {
-  background: #2f2f2f;
+  background-color: #2f2f2f;
   border-color: #626262;
+  color: #ffffff;
   font-weight: bold;
 }
 
-.dark-mode button:hover, .dark-mode button:focus,
+.dark-mode form button:hover, .dark-mode form button:focus,
 .dark-mode button[type="submit"]:hover,
 .dark-mode button[type="submit"]:focus,
 .dark-mode input[type="submit"]:hover,
@@ -1266,12 +1288,12 @@ h2 + .search-form {
 .dark-mode input[type="reset"]:focus,
 .dark-mode input[type="image"]:hover,
 .dark-mode input[type="image"]:focus {
-  background: #ffee00;
+  background-color: #ffee00;
   border-color: #626262;
   color: #222222;
 }
 
-.dark-mode button.menu-toggle,
+.dark-mode form button.menu-toggle,
 .dark-mode button[type="submit"].menu-toggle,
 .dark-mode input[type="submit"].menu-toggle,
 .dark-mode input[type="button"].menu-toggle,
@@ -1282,7 +1304,7 @@ h2 + .search-form {
   color: inherit;
 }
 
-.dark-mode button.menu-toggle svg,
+.dark-mode form button.menu-toggle svg,
 .dark-mode button[type="submit"].menu-toggle svg,
 .dark-mode input[type="submit"].menu-toggle svg,
 .dark-mode input[type="button"].menu-toggle svg,
@@ -1331,7 +1353,7 @@ h2 + .search-form {
   textarea,
   select,
   button {
-    background: #2f2f2f;
+    background-color: #2f2f2f;
     border-color: #626262;
   }
   input:focus,
@@ -1340,17 +1362,18 @@ h2 + .search-form {
   button:focus {
     border-color: #3ad4fb;
   }
-  button,
+  form button,
   button[type="submit"],
   input[type="submit"],
   input[type="button"],
   input[type="reset"],
   input[type="image"] {
-    background: #2f2f2f;
+    background-color: #2f2f2f;
     border-color: #626262;
+    color: #ffffff;
     font-weight: bold;
   }
-  button:hover, button:focus,
+  form button:hover, form button:focus,
   button[type="submit"]:hover,
   button[type="submit"]:focus,
   input[type="submit"]:hover,
@@ -1361,11 +1384,11 @@ h2 + .search-form {
   input[type="reset"]:focus,
   input[type="image"]:hover,
   input[type="image"]:focus {
-    background: #ffee00;
+    background-color: #ffee00;
     border-color: #626262;
     color: #222222;
   }
-  button.menu-toggle,
+  form button.menu-toggle,
   button[type="submit"].menu-toggle,
   input[type="submit"].menu-toggle,
   input[type="button"].menu-toggle,
@@ -1375,7 +1398,7 @@ h2 + .search-form {
     border: none;
     color: inherit;
   }
-  button.menu-toggle svg,
+  form button.menu-toggle svg,
   button[type="submit"].menu-toggle svg,
   input[type="submit"].menu-toggle svg,
   input[type="button"].menu-toggle svg,
