@@ -1221,6 +1221,16 @@ h2 + .search-form {
   margin: 1em 0;
 }
 
+.dark-mode .site-identity .site-title a {
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-identity .site-title a {
+    color: inherit;
+  }
+}
+
 /**
  * Navigation
  */
