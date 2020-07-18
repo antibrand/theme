@@ -216,8 +216,8 @@ body {
 }
 
 /**
- * Images
- */
+* Images
+*/
 .alignleft {
   float: right;
 }
@@ -245,15 +245,21 @@ figure.alignright {
 }
 
 /**
- * Forms
- */
+* Forms
+*/
 .search-label {
   margin: 0 0 0 0.3em;
 }
 
+form button.search-submit,
+button[type="submit"].search-submit {
+  border: solid 1px #005fd6;
+  border-right: none;
+}
+
 /**
- * Navigation
- */
+* Navigation
+*/
 .main-navigation {
   float: right;
 }
@@ -321,9 +327,23 @@ figure.alignright {
 }
 
 /**
- * Header
- */
+* Header
+*/
 .site-identity .site-logo {
   margin-right: 0;
   margin-left: 1em;
+}
+
+.dark-mode form button.search-submit,
+.dark-mode button[type="submit"].search-submit {
+  border: solid 1px #005fd6;
+  border-right: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  form button.search-submit,
+  button[type="submit"].search-submit {
+    border: solid 1px #005fd6;
+    border-right: none;
+  }
 }
